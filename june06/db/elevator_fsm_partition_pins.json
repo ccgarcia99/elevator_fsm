@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "motor_up",
+					"strict" : false
+				},
+				{
+					"name" : "motor_down",
+					"strict" : false
+				},
+				{
+					"name" : "open_door",
+					"strict" : false
+				},
+				{
+					"name" : "close_door",
+					"strict" : false
+				},
+				{
+					"name" : "floor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "floor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "up_button",
+					"strict" : false
+				},
+				{
+					"name" : "down_button",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
