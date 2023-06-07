@@ -1,0 +1,116 @@
+module elevator_fsm (
+  input wire clk,
+  input wire reset,
+  input wire up_button,
+  input wire down_button,
+  output reg motor_up,
+  output reg motor_down,
+  output reg open_door,
+  output reg close_door
+);
+
+  // Define the state enumeration
+  typedef enum logic [1:0] {
+    STATE_UP,
+    STATE_DOWN,
+    STATE_START,
+    STATE_IDLE
+  } state_t;
+
+  // Define the state and next state signals
+  reg [1:0] state;
+  reg [1:0] next_state;
+
+  // State register
+  always @(posedge clk or posedge reset) begin
+    if (reset)
+      state <= STATE_IDLE;
+    else
+      state <= next_state;
+  end
+
+  // Next state and output logic
+  always @(state or up_button or down_button) begin
+    case (state)
+      STATE_UP:
+        if (up_button) begin
+          next_state = STATE_UP;
+          motor_up = 1;
+          motor_down = 0;
+          open_door = 0;
+          close_door = 0;
+        end
+        else if (down_button) begin
+          next_state = STATE_DOWN;
+          motor_up = 0;
+          motor_down = 1;
+          open_door = 0;
+          close_door = 0;
+        end
+        else begin
+          next_state = STATE_IDLE;
+          motor_up = 0;
+          motor_down = 0;
+          open_door = 0;
+          close_door = 0;
+        end
+      STATE_DOWN:
+        if (down_button) begin
+          next_state = STATE_DOWN;
+          motor_up = 0;
+          motor_down = 1;
+          open_door = 0;
+          close_door = 0;
+        end
+        else if (up_button) begin
+          next_state = STATE_UP;
+          motor_up = 1;
+          motor_down = 0;
+          open_door = 0;
+          close_door = 0;
+        end
+        else begin
+          next_state = STATE_IDLE;
+          motor_up = 0;
+          motor_down = 0;
+          open_door = 0;
+          close_door = 0;
+        end
+      STATE_START:
+        next_state = STATE_IDLE;
+        motor_up = 0;
+        motor_down = 0;
+        open_door = 1;
+        close_door = 0;
+      STATE_IDLE:
+        if (up_button) begin
+          next_state = STATE_UP;
+          motor_up = 1;
+          motor_down = 0;
+          open_door = 0;
+          close_door = 0;
+        end
+        else if (down_button) begin
+          next_state = STATE_DOWN;
+          motor_up = 0;
+          motor_down = 1;
+          open_door = 0;
+          close_door = 0;
+        end
+        else begin
+          next_state = STATE_IDLE;
+          motor_up = 0;
+          motor_down = 0;
+          open_door = 0;
+          close_door = 0;
+        end
+      default:
+        next_state = STATE_IDLE;
+        motor_up = 0;
+        motor_down = 0;
+        open_door = 0;
+        close_door = 0;
+    endcase
+  end
+
+endmodule

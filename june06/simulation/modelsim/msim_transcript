@@ -1,0 +1,67 @@
+# Reading pref.tcl
+# ERROR: No extended dataflow license exists
+# do elevator_fsm_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06 {C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:48:34 on Jun 07,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06" C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm.v 
+# -- Compiling module elevator_fsm
+# 
+# Top level modules:
+# 	elevator_fsm
+# End time: 14:48:34 on Jun 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06 {C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/floor_display.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:48:34 on Jun 07,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06" C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/floor_display.v 
+# -- Compiling module floor_display
+# 
+# Top level modules:
+# 	floor_display
+# End time: 14:48:34 on Jun 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06 {C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:48:34 on Jun 07,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06" C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm_tb.v 
+# -- Compiling module elevator_fsm_tb
+# 
+# Top level modules:
+# 	elevator_fsm_tb
+# End time: 14:48:34 on Jun 07,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  elevator_fsm_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" elevator_fsm_tb 
+# Start time: 14:48:34 on Jun 07,2023
+# Loading work.elevator_fsm_tb
+# Loading work.elevator_fsm
+# Loading work.floor_display
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 9, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /elevator_fsm_tb/dut File: C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm_tb.v Line: 18
+# ** Warning: (vsim-3722) C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm_tb.v(18): [TFMPC] - Missing connection for port 'floor'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm_tb.v(62)
+#    Time: 70 ns  Iteration: 0  Instance: /elevator_fsm_tb
+# 1
+# Break in Module elevator_fsm_tb at C:/Users/ACER/Desktop/3101L_FP/project_testbenches/june06/elevator_fsm_tb.v line 62
+# End time: 14:51:41 on Jun 07,2023, Elapsed time: 0:03:07
+# Errors: 0, Warnings: 2

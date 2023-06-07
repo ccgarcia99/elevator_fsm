@@ -1,0 +1,46 @@
+|elevator_fsm
+clk => clk.IN1
+reset => reset.IN1
+up_button => motor_down.OUTPUTSELECT
+up_button => open_door.OUTPUTSELECT
+up_button => close_door.OUTPUTSELECT
+up_button => motor_up.DATAA
+up_button => close_door.DATAA
+up_button => Selector1.IN1
+up_button => Selector3.IN1
+up_button => open_door.DATAA
+down_button => motor_up.OUTPUTSELECT
+down_button => open_door.OUTPUTSELECT
+down_button => close_door.OUTPUTSELECT
+down_button => motor_down.DATAA
+down_button => close_door.DATAA
+down_button => Selector2.IN1
+down_button => Selector4.IN1
+down_button => open_door.DATAA
+motor_up << Selector3.DB_MAX_OUTPUT_PORT_TYPE
+motor_down << Selector4.DB_MAX_OUTPUT_PORT_TYPE
+open_door << Selector5.DB_MAX_OUTPUT_PORT_TYPE
+close_door << Selector6.DB_MAX_OUTPUT_PORT_TYPE
+floor[0] << floor[0].DB_MAX_OUTPUT_PORT_TYPE
+floor[1] << floor[1].DB_MAX_OUTPUT_PORT_TYPE
+floor[2] << floor[2].DB_MAX_OUTPUT_PORT_TYPE
+floor[3] << floor[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|elevator_fsm|floor_display:OurFloor
+clk => current_floor[0].CLK
+clk => current_floor[1].CLK
+clk => current_floor[2].CLK
+reset => current_floor[0].ACLR
+reset => current_floor[1].ACLR
+reset => current_floor[2].ACLR
+floor[0] => current_floor[0].DATAIN
+floor[1] => current_floor[1].DATAIN
+floor[2] => current_floor[2].DATAIN
+floor[3] => ~NO_FANOUT~
+display[0] <= current_floor[0].DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= current_floor[1].DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= current_floor[2].DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= <GND>
+
+
